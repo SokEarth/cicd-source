@@ -121,8 +121,9 @@ jobs:
           command: |
             git clone https://github.com/SokEarth/cicd-source.git
             sed -i "s|tag: .*|tag: ${CIRCLE_WORKFLOW_ID:0:7}|g" chart/values.yaml
-            cd cicd-source
-            git commit -am "Update image tag to ${CIRCLE_WORKFLOW_ID:0:7}"
+            cat manifest/deployment.yaml
+            git add .
+            git commit -a "Update image tag to ${CIRCLE_WORKFLOW_ID:0:7}"
             git push -q https://$GH_TOKEN@github.com/SokEarth/cicd-source.git main
             
 workflows:
