@@ -125,8 +125,7 @@ jobs:
             cat chart/values.yaml
             git add .
             git commit -m "Update image tag to ${CIRCLE_WORKFLOW_ID:0:7}"
-            git config credential.helper 'cache --timeout=120'
-            git push https://$GH_TOKEN@github.com/SokEarth/cicd-source.git HEAD:main
+            git push -q https://$GH_TOKEN@github.com/SokEarth/cicd-source.git main
             
 workflows:
   default:
