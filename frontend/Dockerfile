@@ -10,6 +10,11 @@ WORKDIR /app
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package*.json ./
 RUN npm install
+RUN npm audit fix --force --audit-level=critical
+RUN npm audit fix --force --audit-level=critical
+RUN npm audit fix --force --audit-level=critical
+RUN npm audit fix --force --audit-level=critical
+RUN npm audit --audit-level=critical
 
-EXPOSE 3000
+EXPOSE 8081
 CMD [ "node", "dist/index.js" ]
