@@ -3,7 +3,8 @@ replicaCount: 1
 image:
   repository: soezeh/udafrontend
   pullPolicy: IfNotPresent
-  tag: ""
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "a623dd4"
 
 imagePullSecrets: []
 nameOverride: ""
