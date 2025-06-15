@@ -4,7 +4,7 @@ image:
   repository: soezeh/udafrontend
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "9f1e0b0"
+  tag: "4d6163a"
 
 imagePullSecrets: []
 nameOverride: ""
